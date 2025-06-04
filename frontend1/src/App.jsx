@@ -4,9 +4,9 @@ import Dashboard from "./pages/Dashboard";
 import "./App.css";
 
 function App() {
-  const [token, setToken] = useState<string | null>(null);
+  const [token, setToken] = useState(null);
 
-  const handleLogin = (token: string) => {
+  const handleLogin = (token) => {
     setToken(token);
   };
 
