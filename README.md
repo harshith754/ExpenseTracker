@@ -70,6 +70,38 @@ You can test if the server is running by visiting the URL above in your browser.
 
 ---
 
+# Expense Tracker Frontend Setup
+
+This section explains how to set up and run the React frontend for the Expense Tracker project.
+
+## Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm (comes with Node.js)
+
+## Setup Instructions
+
+### 1. Install Dependencies
+
+Navigate to the `frontend` directory and install the required packages:
+
+```
+cd frontend
+npm install
+```
+
+### 2. Start the Development Server
+
+Run the following command inside the `frontend` directory:
+
+```
+npm run dev
+```
+
+The frontend will start at `http://localhost:5173/` by default. Open this URL in your browser to use the app.
+
+---
+
 # Expense Tracker Backend API
 
 ## Endpoints
