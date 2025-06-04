@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import ExpenseForm from "./ExpenseForm";
 
-export default function Dashboard({ token }: { token: string }) {
+export default function Dashboard({
+  token,
+  onLogout,
+}: {
+  token: string;
+  onLogout: () => void;
+}) {
   const [expenses, setExpenses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -42,7 +48,15 @@ export default function Dashboard({ token }: { token: string }) {
         <h2 className="text-xl font-bold text-blue-700 tracking-tight">
           Dashboard
         </h2>
-        <span className="text-gray-500 text-xs">Welcome!</span>
+        <div className="flex items-center gap-4">
+          <span className="text-gray-500 text-xs">Welcome!</span>
+          <button
+            className="px-3 py-1 bg-red-100 text-red-700 rounded hover:bg-red-200 border border-red-200 text-xs font-semibold transition"
+            onClick={onLogout}
+          >
+            Logout
+          </button>
+        </div>
       </div>
       <div className="flex flex-col md:flex-row gap-8">
         <div className="flex-1">
