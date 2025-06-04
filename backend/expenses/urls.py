@@ -3,7 +3,6 @@ from .views import (
     ExpenseListCreateView,
     ExpenseRetrieveUpdateDestroyView,
     ExpenseSummaryView,
-    ping,
 )
 
 urlpatterns = [

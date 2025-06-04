@@ -88,8 +88,3 @@ def get_token_for_user(request):
             'username': user.username
         })
     return Response({'error': 'Invalid credentials'}, status=400)
-
-
-@require_GET
-def ping(request):
-    return JsonResponse({'message': 'pong'})

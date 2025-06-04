@@ -16,12 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from expenses.views import ping, get_token_for_user
+from expenses.views import get_token_for_user
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/ping/', ping, name='ping'),
     path('api/', include('expenses.urls')),
     path('api/token/', obtain_auth_token, name='api_token_auth'),
     path('api/get-token/', get_token_for_user, name='get_token_for_user'),
