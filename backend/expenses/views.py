@@ -49,7 +49,7 @@ class ExpenseListCreateView(generics.ListCreateAPIView):
 class ExpenseRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ExpenseSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
-    
+
     def get_queryset(self):
         user = self.request.user
         if user.is_staff:
