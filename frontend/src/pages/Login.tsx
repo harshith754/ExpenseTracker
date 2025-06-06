@@ -2,8 +2,10 @@ import { useState } from "react";
 
 export default function LoginPage({
   onLogin,
+  onGoToRegister,
 }: {
   onLogin: (token: string) => void;
+  onGoToRegister: () => void;
 }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -112,6 +114,12 @@ export default function LoginPage({
           <p className="text-gray-500 text-sm">
             Demo credentials: admin / password
           </p>
+          <button
+            className="mt-4 text-indigo-600 hover:underline text-sm"
+            onClick={onGoToRegister}
+          >
+            Don't have an account? Register
+          </button>
         </div>
       </div>
     </div>

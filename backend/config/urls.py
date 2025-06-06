@@ -24,4 +24,5 @@ urlpatterns = [
     path('api/', include('expenses.urls')),
     path('api/token/', obtain_auth_token, name='api_token_auth'),
     path('api/get-token/', get_token_for_user, name='get_token_for_user'),
+    path('api/register/', include('expenses.urls')), 
 ]

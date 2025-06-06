@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import LoginPage from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import RegisterPage from "./pages/Register";
 import "./App.css";
 
 function App() {
   const [token, setToken] = useState(() => localStorage.getItem("token"));
+  const [showRegister, setShowRegister] = useState(false);
 
   useEffect(() => {
     if (token) {
@@ -23,7 +25,20 @@ function App() {
   };
 
   if (!token) {
-    return <LoginPage onLogin={handleLogin} />;
+    if (showRegister) {
+      return (
+        <RegisterPage
+          onRegister={() => setShowRegister(false)}
+          onGoToLogin={() => setShowRegister(false)}
+        />
+      );
+    }
+    return (
+      <LoginPage
+        onLogin={handleLogin}
+        onGoToRegister={() => setShowRegister(true)}
+      />
+    );
   }
 
   return <Dashboard token={token} onLogout={handleLogout} />;
